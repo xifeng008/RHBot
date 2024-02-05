@@ -5,7 +5,7 @@ import { NEXT_PUBLIC_URL } from './config';
 const frameMetadata = getFrameMetadata({
   buttons: [
     {
-      label: 'Check quest numbers',
+      label: 'Check claimable quests',
     },
     {
       label: 'Redirect to RabbitHole',
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
-      <h1>RH</h1>
+      <h1>Boost Guild!</h1>
     </>
   );
 }
