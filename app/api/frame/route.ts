@@ -28,7 +28,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
 
   if (message?.button === 2) {
     return NextResponse.redirect(
-      'https://rabbithole.gg/quests?wallet_ref=0x7FF4F8FE1dBbBA8Dc27103359BF96e97a4d44114',
+      'https://rabbithole.gg/quests',
       { status: 302 },
     );
   }
