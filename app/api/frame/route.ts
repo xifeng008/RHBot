@@ -32,7 +32,6 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     console.log('go to quests');
     return NextResponse.redirect(
       'https://rabbithole.gg/quests',
-      { status: 302 },
     );
   }
 
