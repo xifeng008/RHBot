@@ -26,7 +26,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
 
   if (message?.button === 2) {
     return NextResponse.redirect(
-      'https://rabbithole.gg/quests',
+      'https://rabbithole.gg/quests/b595ef82-0d39-42a9-b827-043d2231d4e3',
       { status: 302 },
     );
   }
