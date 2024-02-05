@@ -9,7 +9,7 @@ const frameMetadata = getFrameMetadata({
     },
     {
       label: 'Redirect to RabbitHole',
-      action: 'post',
+      action: 'post_redirect',
     },
   ],
   image: `${NEXT_PUBLIC_URL}/park-1.png`,
