@@ -1,10 +1,10 @@
 import { FrameRequest, getFrameMessage, getFrameHtmlResponse } from '@coinbase/onchainkit';
 import { NextRequest, NextResponse } from 'next/server';
 import { NEXT_PUBLIC_URL } from '../../config';
+import axios from 'axios';
 
 async function getResponse(req: NextRequest): Promise<NextResponse> {
   let accountAddress: string | undefined = '';
-  let text: string | undefined = '';
 
   const body: FrameRequest = await req.json();
   const { isValid, message } = await getFrameMessage(body, { neynarApiKey: 'NEYNAR_ONCHAIN_KIT' });
@@ -13,13 +13,17 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     accountAddress = message.interactor.verified_accounts[0];
   }
 
-  if (message?.input) {
-    text = message.input;
+  let number = 0;
+  if (message?.button === 1) {
+    const checkUrl = `https://api.rabbithole.gg/v1.3/quests/${accountAddress}?pageNo=1&pageSize=10&status=redeemable`
+    axios.get(checkUrl).then(result => {
+      number = result.data.quests.length;
+    })
   }
 
   if (message?.button === 2) {
     return NextResponse.redirect(
-      'https://www.google.com/search?q=cute+dog+pictures&tbm=isch&source=lnms',
+      'https://rabbithole.gg/quests?wallet_ref=0x7FF4F8FE1dBbBA8Dc27103359BF96e97a4d44114',
       { status: 302 },
     );
   }
@@ -28,7 +32,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     getFrameHtmlResponse({
       buttons: [
         {
-          label: `🌲 Text: ${text}`,
+          label: `🐇 Quest Numbers: ${number}`,
         },
       ],
       image: `${NEXT_PUBLIC_URL}/park-2.png`,
