@@ -11,6 +11,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
 
   if (isValid) {
     accountAddress = message.interactor.verified_accounts[0];
+    console.log('accountAddress:', accountAddress);
   }
 
   let number = 0;
