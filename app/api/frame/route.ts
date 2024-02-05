@@ -16,14 +16,12 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   let number = 0;
   if (message?.button === 1) {
     const checkUrl = `https://api.rabbithole.gg/v1.3/quests/${accountAddress}?pageNo=1&pageSize=10&status=redeemable`;
-    (async () => {
-      try {
-        const result = await axios.get(checkUrl);
-        number = result.data.quests.length;
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    })();
+    try {
+      const result = await axios.get(checkUrl);
+      number = result.data.quests.length;
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
   }
 
   if (message?.button === 2) {
