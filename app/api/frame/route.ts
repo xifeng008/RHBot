@@ -27,7 +27,6 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   if (message?.button === 2) {
     return NextResponse.redirect(
       'https://rabbithole.gg/quests',
-      { status: 200 },
     );
   }
 
