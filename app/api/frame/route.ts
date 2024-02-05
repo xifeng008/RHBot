@@ -15,6 +15,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   }
 
   let number = 0;
+  // 第一个按钮
   if (message?.button === 1) {
     console.log('checking quests');
     const checkUrl = `https://api.rabbithole.gg/v1.3/quests/${accountAddress}?status=redeemable`;
@@ -26,6 +27,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     }
   }
 
+  // 第二个按钮
   if (message?.button === 2) {
     console.log('go to quests');
     return NextResponse.redirect(
