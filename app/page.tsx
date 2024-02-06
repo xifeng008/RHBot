@@ -5,19 +5,15 @@ import { NEXT_PUBLIC_URL } from './config';
 const frameMetadata = getFrameMetadata({
   buttons: [
     {
-      label: 'Check claimable quests',
-    },
-    {
-      label: 'Redirect to RabbitHole',
-      action: 'post_redirect',
-    },
+      label: 'Mint Your Boost Pass To Get Early Access',
+    }
   ],
-  image: `${NEXT_PUBLIC_URL}/park-1.png`,
+  image: `${NEXT_PUBLIC_URL}/boost-pass-display.png`,
   post_url: `${NEXT_PUBLIC_URL}/api/frame`,
 });
 
 export const metadata: Metadata = {
-  title: 'RH',
+  title: 'Boot Guild!',
   description: 'LFG',
   openGraph: {
     title: 'RH',

@@ -14,39 +14,37 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     console.log('accountAddress:', accountAddress);
   }
 
-  let number = 0;
-  // 第一个按钮
-  if (message?.button === 1) {
-    console.log('checking quests');
-    const checkUrl = `https://api.rabbithole.gg/v1.3/quests/${accountAddress}?status=redeemable`;
+  if (!accountAddress) {
+    console.log('checking pass for account:', accountAddress);
+    const boostPassUrl = `https://api.boost.xyz/v1/boost-pass/${accountAddress}`;
     try {
-      const result = await axios.get(checkUrl);
-      number = result.data.quests.length;
+      const result = await axios.get(boostPassUrl);
+      // 如果 
+      if (result.data.error) {
+        return new NextResponse(
+          getFrameHtmlResponse({
+            buttons: [
+              {
+                label: `Mint a new pass`,
+              },
+            ],
+            image: `${NEXT_PUBLIC_URL}/park-2.png`,
+            post_url: `${NEXT_PUBLIC_URL}/api/frame`,
+          }),
+        );
+      } else {
+        const imageUrl = result.data.image;
+        return new NextResponse(
+          getFrameHtmlResponse({
+            image: imageUrl,
+            post_url: `${NEXT_PUBLIC_URL}/api/frame`,
+          }),
+        );
+      }
     } catch (error) {
       console.error("Error fetching data:", error);
     }
   }
-
-  // 第二个按钮
-  if (message?.button === 2) {
-    console.log('go to quests');
-    return NextResponse.redirect(
-      'https://rabbithole.gg/quests',
-    );
-  }
-
-  const buttonLable = number === 0 ? `🐇 Not reward can claim, click to start` : `🐇 Quest Numbers: ${number}, click to check`; 
-  return new NextResponse(    
-    getFrameHtmlResponse({
-      buttons: [
-        {
-          label: buttonLable,
-        },
-      ],
-      image: `${NEXT_PUBLIC_URL}/park-2.png`,
-      post_url: `${NEXT_PUBLIC_URL}/api/frame`,
-    }),
-  );
 }
 
 export async function POST(req: NextRequest): Promise<Response> {
