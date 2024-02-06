@@ -46,7 +46,8 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     } catch (error) {
       console.error("Error fetching data:", error);
     }
-  } else { 
+  }
+ 
     return new NextResponse(
       getFrameHtmlResponse({
         buttons: [
@@ -58,10 +59,6 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
         post_url: `${NEXT_PUBLIC_URL}/api/frame`,
       }),
     );
-  }
-
-
- 
 }
 
 export async function POST(req: NextRequest): Promise<Response> {
