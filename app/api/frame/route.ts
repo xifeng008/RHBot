@@ -14,7 +14,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     console.log('accountAddress:', accountAddress);
   }
 
-  if (!accountAddress) {
+  if (accountAddress) {
     console.log('checking pass for account:', accountAddress);
     const boostPassUrl = `https://api.boost.xyz/v1/boost-pass/${accountAddress}`;
     try {
