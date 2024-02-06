@@ -45,6 +45,17 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
       console.error("Error fetching data:", error);
     }
   }
+  return new NextResponse(
+    getFrameHtmlResponse({
+      buttons: [
+        {
+          label: `Mint a new pass`,
+        },
+      ],
+      image: `${NEXT_PUBLIC_URL}/park-2.png`,
+      post_url: `${NEXT_PUBLIC_URL}/api/frame`,
+    }),
+  );
 }
 
 export async function POST(req: NextRequest): Promise<Response> {
