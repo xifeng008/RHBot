@@ -15,6 +15,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     const boostPassUrl = `https://api.boost.xyz/v1/boost-pass/${accountAddress}`;
     try {
       const result = await axios.get(boostPassUrl);
+      console.log('boostPassUrl:', boostPassUrl);
       console.log('result:', result.data);
       if (result.data.error) {
         return new NextResponse(
@@ -32,8 +33,13 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
         const imageUrl = result.data.image;
         return new NextResponse(
           getFrameHtmlResponse({
+            buttons: [
+              {
+                label: `Refer others earn 50% of the mint fee on each mint`,
+              },
+            ],
             image: imageUrl,
-            post_url: `${NEXT_PUBLIC_URL}/api/frame`,
+            post_url: `https://inbox.boost.xyz/invite/${accountAddress}`,
           }),
         );
       }
