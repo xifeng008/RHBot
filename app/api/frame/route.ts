@@ -35,7 +35,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
           getFrameHtmlResponse({
             buttons: [
               {
-                label: `Refer others earn 50% of the mint fee on each mint`,
+                label: `Alread mint, share refer to others earn 50% of the mint fee`,
               },
             ],
             image: imageUrl,
