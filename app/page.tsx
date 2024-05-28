@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
-      <h1>Boost Guild!</h1>
+      <h1>Boost Guild Test!</h1>
     </>
   );
 }
