@@ -11,7 +11,7 @@ const frameMetadata = getFrameMetadata({
       label: 'Go to Approved',
     }
   ],
-  image: `${NEXT_PUBLIC_URL}/boost-pass-display.png`,
+  image: `${NEXT_PUBLIC_URL}/boost-pass-display1.png`,
   post_url: `${NEXT_PUBLIC_URL}/api/frame`,
 });
 
