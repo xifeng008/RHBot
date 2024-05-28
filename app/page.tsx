@@ -5,7 +5,10 @@ import { NEXT_PUBLIC_URL } from './config';
 const frameMetadata = getFrameMetadata({
   buttons: [
     {
-      label: 'Mint Your Boost Pass To Get Early Access123',
+      label: 'Read SUMMARY',
+    },
+    {
+      label: 'Go to Approved',
     }
   ],
   image: `${NEXT_PUBLIC_URL}/boost-pass-display1.png`,
