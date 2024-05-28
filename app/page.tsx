@@ -13,7 +13,7 @@ const frameMetadata = getFrameMetadata({
   ],
   image: `${NEXT_PUBLIC_URL}/boost-pass-display.png`,
   // post_url: `${NEXT_PUBLIC_URL}/api/frame`,
-  post_url: `${NEXT_PUBLIC_URL}`,
+  post_url: `https://app.llama.xyz/orgs/boost/optimism/actions/72`,
 });
 
 export const metadata: Metadata = {
