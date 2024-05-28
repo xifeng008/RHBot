@@ -16,7 +16,7 @@ const frameMetadata = getFrameMetadata({
 });
 
 export const metadata: Metadata = {
-  title: 'Boot Guild!',
+  title: 'Boot Guild TEST!',
   description: 'LFG',
   openGraph: {
     title: 'RH',
