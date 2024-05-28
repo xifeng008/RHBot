@@ -52,10 +52,11 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
       getFrameHtmlResponse({
         buttons: [
           {
-            label: `Mint a new pass`,
+            // label: `Mint a new pass`,
+            label: "xxxxxxxx"
           },
         ],
-        image: `${NEXT_PUBLIC_URL}/boost-pass-disaplay.png`,
+        image: `${NEXT_PUBLIC_URL}/boost-pass-disaplay1.png`,
         post_url: `${NEXT_PUBLIC_URL}/api/frame`,
       }),
     );
