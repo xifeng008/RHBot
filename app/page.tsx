@@ -5,13 +5,13 @@ import { NEXT_PUBLIC_URL } from './config';
 const frameMetadata = getFrameMetadata({
   buttons: [
     {
-      label: 'Read SUMMARY',
+      label: 'Read Summary',
     },
     {
-      label: 'Go to Approved',
+      label: 'Go To Approved',
     }
   ],
-  image: `${NEXT_PUBLIC_URL}/boost-pass-display1.png`,
+  image: `${NEXT_PUBLIC_URL}/boost-pass-display.png`,
   // post_url: `${NEXT_PUBLIC_URL}/api/frame`,
   post_url: `${NEXT_PUBLIC_URL}`,
 });
