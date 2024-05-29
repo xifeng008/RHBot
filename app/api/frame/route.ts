@@ -2,12 +2,11 @@ import { FrameRequest, getFrameMessage, getFrameHtmlResponse } from '@coinbase/o
 import { NextRequest, NextResponse } from 'next/server';
 import { NEXT_PUBLIC_URL } from '../../config';
 import { useRouter } from 'next/router';
-import axios from 'axios';
+// import axios from 'axios';
 
 async function getResponse(req: NextRequest, llama: { network: string, actionId: string }): Promise<NextResponse> {
-    let accountAddress: string | undefined = '';
     const body: FrameRequest = await req.json();
-    const { isValid, message } = await getFrameMessage(body, { neynarApiKey: 'NEYNAR_ONCHAIN_KIT' });
+    const { isValid } = await getFrameMessage(body, { neynarApiKey: 'NEYNAR_ONCHAIN_KIT' });
     if (isValid) {
         try {
             return new NextResponse(
@@ -44,9 +43,10 @@ async function getResponse(req: NextRequest, llama: { network: string, actionId:
 }
 
 export async function POST(req: NextRequest): Promise<Response> {
-    const router = useRouter();
-    const { network, actionId } = router.query
-    const llama = { network, actionId } as { network: string, actionId: string }
+    // const router = useRouter();
+    // const { network, actionId } = router.query
+    // const llama = { network, actionId } as { network: string, actionId: string }
+    const llama = { network: "optimism", actionId: "72" } as { network: string, actionId: string }
     return getResponse(req, llama);
 }
 
