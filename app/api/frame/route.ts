@@ -23,6 +23,7 @@ async function getResponse(req: NextRequest, llama: { network: string, actionId:
                     ],
                     image: `${NEXT_PUBLIC_URL}/boost-pass-display.png`,
                     post_url: `${NEXT_PUBLIC_URL}/llama/${llama.network}/actions/${llama.actionId}`,
+                    // post_url: `${NEXT_PUBLIC_URL}/api/end`
                 }),
             );
 
