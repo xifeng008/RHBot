@@ -6,45 +6,24 @@ import { useParams } from 'next/navigation';
 // import axios from 'axios';
 
 async function getResponse(req: NextRequest, llama: { network: string, actionId: string }): Promise<NextResponse> {
-    const body: FrameRequest = await req.json();
-    const { isValid } = await getFrameMessage(body, { neynarApiKey: 'NEYNAR_ONCHAIN_KIT' });
-    if (isValid) {
-        try {
-            return new NextResponse(
-                getFrameHtmlResponse({
-                    buttons: [
-                        {
-                            label: 'Read Summary',
-                        },
-                        {
-                            label: 'Go To Approved',
-                            action: 'post_redirect'
-                        }
-                    ],
-                    image: `${NEXT_PUBLIC_URL}/boost-pass-display.png`,
-                    post_url: `${NEXT_PUBLIC_URL}/llama/${llama.network}/actions/${llama.actionId}`,
-                    // post_url: `${NEXT_PUBLIC_URL}/api/end`
-                }),
-            );
-
-           
-
-        } catch (error) {
-            console.error("Error fetching data:", error);
-        }
+    const data = await req.json()
+    const buttonId = data.untrustedData.buttonIndex
+    let path: string;
+    if(buttonId == 1) {
+        path = ""
+    } else if(buttonId == 2) {
+        path = `https://app.llama.xyz/orgs/boost/${llama.network}/actions/${llama.actionId}`
+    } else {
+        path = ""
     }
 
-    return new NextResponse(
-        getFrameHtmlResponse({
-            buttons: [
-                {
-                    label: `Mint a new pass`,
-                },
-            ],
-            image: `${NEXT_PUBLIC_URL}/boost-pass-disaplay.png`,
-            post_url: `${NEXT_PUBLIC_URL}/api/frame`,
-        }),
-    );
+    const headers = new Headers()
+    headers.set('Loaction', '')
+    const response = NextResponse.redirect(`${path}`, {
+        headers,
+        status: 302
+    })
+    return response
 }
 
 export async function POST(req: NextRequest): Promise<Response> {
