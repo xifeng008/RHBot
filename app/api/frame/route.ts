@@ -18,6 +18,7 @@ async function getResponse(req: NextRequest, llama: { network: string, actionId:
                         },
                         {
                             label: 'Go To Approved',
+                            action: 'post_redirect'
                         }
                     ],
                     image: `${NEXT_PUBLIC_URL}/boost-pass-display.png`,
