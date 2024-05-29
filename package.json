@@ -12,12 +12,12 @@
   "author": "https://twitter.com/Zizzamia",
   "license": "MIT",
   "dependencies": {
-    "@coinbase/onchainkit": "^0.17.3",
+    "@coinbase/onchainkit": "^0.4.5",
     "axios": "^1.6.7",
     "next": "13.5.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "viem": "^2.13.1"
+    "viem": "^2.7.1"
   },
   "devDependencies": {
     "@types/node": "^20.11.8",
