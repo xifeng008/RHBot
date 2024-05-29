@@ -1,4 +1,4 @@
-import { getFrameMetadata, FrameMetadata  } from '@coinbase/onchainkit/src/frame';
+import {  getFrameMetadata ,FrameMetadata  } from '@coinbase/onchainkit/esm/frame';
 import type { Metadata } from 'next';
 import { NEXT_PUBLIC_URL } from '../../../../config';
 
