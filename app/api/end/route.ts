@@ -5,13 +5,13 @@ import { useParams } from 'next/navigation'
 export async function POST(req: NextResponse): Promise<Response> {
     const data = await req.json()
     const buttonId = data.untrustedData.buttonIndex
-    const params = useParams()
-    const { network, actionId } = params
+    // const params = useParams()
+    // const { network, actionId } = params
     let path: string;
     if(buttonId == 1) {
         path = ""
     } else if(buttonId == 2) {
-        path = `https://app.llama.xyz/orgs/boost/${network}/actions/${actionId}`
+        path = `https://app.llama.xyz/orgs/boost/optimism/actions/72`
     } else {
         path = ""
     }
