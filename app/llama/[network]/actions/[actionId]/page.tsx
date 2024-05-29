@@ -1,6 +1,6 @@
 import { getFrameMetadata } from '@coinbase/onchainkit';
 import type { Metadata } from 'next';
-import { NEXT_PUBLIC_URL, NEXT_PUBLIC_POST_URL } from '../../../../config';
+import { NEXT_PUBLIC_URL } from '../../../../config';
 
 const frameMetadata = getFrameMetadata({
   buttons: [
@@ -13,7 +13,7 @@ const frameMetadata = getFrameMetadata({
   ],
   image: `${NEXT_PUBLIC_URL}/boost-pass-display.png`,
   // post_url: `${NEXT_PUBLIC_URL}/api/frame`,
-  post_url: `${NEXT_PUBLIC_POST_URL}`,
+  post_url: `${NEXT_PUBLIC_URL}/llama/network/actions/acionId`,
 });
 
 export const metadata: Metadata = {
@@ -30,9 +30,10 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
+  
   return (
     <>
-      <h1>Boost Guild!</h1>
+      <h1>Boost Guild action network!</h1>
     </>
   );
 }
