@@ -13,8 +13,8 @@ const frameMetadata = getFrameMetadata({
     }
   ],
   image: `${NEXT_PUBLIC_URL}/boost-pass-display.png`,
-  // post_url: `${NEXT_PUBLIC_URL}/llama/network/actions/acionId`,
-  post_url: `${NEXT_PUBLIC_URL}/api/frame`,
+  post_url: `${NEXT_PUBLIC_URL}/llama/network/actions/acionId`,
+  // post_url: `${NEXT_PUBLIC_URL}/api/frame`,
 });
 
 export const metadata: Metadata = {
