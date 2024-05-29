@@ -1,7 +1,7 @@
 import { FrameRequest, getFrameMessage, getFrameHtmlResponse } from '@coinbase/onchainkit';
 import { NextRequest, NextResponse } from 'next/server';
 import { NEXT_PUBLIC_URL } from '../../config';
-import { useRouter } from 'next/router';
+import { useParams } from 'next/navigation';
 // import axios from 'axios';
 
 async function getResponse(req: NextRequest, llama: { network: string, actionId: string }): Promise<NextResponse> {
@@ -43,10 +43,9 @@ async function getResponse(req: NextRequest, llama: { network: string, actionId:
 }
 
 export async function POST(req: NextRequest): Promise<Response> {
-    // const router = useRouter();
-    // const { network, actionId } = router.query
-    // const llama = { network, actionId } as { network: string, actionId: string }
-    const llama = { network: "optimism", actionId: "72" } as { network: string, actionId: string }
+    const params = useParams();
+    const { network, actionId } = params
+    const llama = { network, actionId } as { network: string, actionId: string }
     return getResponse(req, llama);
 }
 
