@@ -1,15 +1,17 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { NEXT_PUBLIC_URL } from '../../config'
-import exp from 'constants';
+import { useParams } from 'next/navigation'
 
 export async function POST(req: NextRequest): Promise<Response> {
     const data = await req.json()
     const buttonId = data.untrustedData.buttonIndex
+    const params = useParams()
+    const { network, actionId } = params
     let path: string;
     if(buttonId == 1) {
         path = ""
     } else if(buttonId == 2) {
-        path = "https://app.llama.xyz/orgs/boost/optimism/actions/72"
+        path = `https://app.llama.xyz/orgs/boost/${network}/actions/${actionId}`
     } else {
         path = ""
     }
