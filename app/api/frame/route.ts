@@ -2,6 +2,7 @@ import { FrameRequest, getFrameMessage, getFrameHtmlResponse } from '@coinbase/o
 import { NextRequest, NextResponse } from 'next/server';
 import { NEXT_PUBLIC_URL } from '../../config';
 import { useParams } from 'next/navigation';
+
 // import axios from 'axios';
 
 async function getResponse(req: NextRequest, llama: { network: string, actionId: string }): Promise<NextResponse> {
@@ -23,6 +24,8 @@ async function getResponse(req: NextRequest, llama: { network: string, actionId:
                     post_url: `${NEXT_PUBLIC_URL}/llama/${llama.network}/actions/${llama.actionId}`,
                 }),
             );
+
+           
 
         } catch (error) {
             console.error("Error fetching data:", error);
