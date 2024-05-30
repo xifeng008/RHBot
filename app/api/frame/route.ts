@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { NEXT_PUBLIC_URL } from '../../config'
 
 export async function POST(req: NextRequest): Promise<Response> {
-    const searchParams = req.nextUrl.searchParams
+    // const searchParams = req.nextUrl.searchParams
     // const actionId = searchParams.get("actionId")
     // const network = searchParams.get("network")
     const data = await req.json()
