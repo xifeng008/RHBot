@@ -35,9 +35,6 @@ export default function Page() {
         }
         image={`${NEXT_PUBLIC_URL}/boost-pass-display.png`}
         post_url={`${NEXT_PUBLIC_URL}/api/frame?actionId=1&network=optimism`}
-        input={{
-          text: "Tell me a boat story"
-        }}
       ></FrameMetadata>
       <h1>Boost Guild action network!</h1>
     </>
