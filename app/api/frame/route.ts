@@ -11,7 +11,8 @@ export async function POST(req: NextRequest): Promise<Response> {
     if(buttonId == 1) {
         path = `${NEXT_PUBLIC_URL}/llama/${network}/actions/${actionId}`
     } else if(buttonId == 2) {
-        path = `https://app.llama.xyz/orgs/boost/${network}/actions/${actionId}/${req.url}/${req.nextUrl}`
+        // path = `https://app.llama.xyz/orgs/boost/${network}/actions/${actionId}/${req.url}/${req.nextUrl}`
+        path = `https://${req.url}/${req.nextUrl}`
     } else {
         path = ""
     }
