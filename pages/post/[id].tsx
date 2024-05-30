@@ -23,7 +23,7 @@ export default function Page() {
 
     const router = useRouter();
     console.log(router.pathname)
-    const pathname = router.pathname
+    const pathname = router.query.id
 
     return (
         <>
