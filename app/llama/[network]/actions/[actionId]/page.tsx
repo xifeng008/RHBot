@@ -18,10 +18,10 @@ export const metadata: Metadata = {
 
 
 
-export default function ActionPage() {
+export default function Page() {
   const params = useParams()
-  const id = params.actionId
-  const network = params.network
+  // const id = params.actionId
+  // const network = params.network
   // const { actionId, network } = params
   return (
     <>
