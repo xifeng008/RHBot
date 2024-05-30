@@ -2,22 +2,26 @@ import { FrameMetadata } from '@coinbase/onchainkit';
 import type { Metadata } from 'next';
 import { NEXT_PUBLIC_URL } from '../../../../config';
 
-export const metadata: Metadata = {
-  title: 'Boot Guild!',
-  description: 'LFG',
-  openGraph: {
-    title: 'RH',
-    description: 'LFG',
-    images: [`${NEXT_PUBLIC_URL}/park-1.png`],
-  },
-  other: {
-    // ...frameMetadata,
-  },
-};
+// export const metadata: Metadata = {
+//   title: 'Boot Guild!',
+//   description: 'LFG',
+//   openGraph: {
+//     title: 'RH',
+//     description: 'LFG',
+//     images: [`${NEXT_PUBLIC_URL}/park-1.png`],
+//   },
+//   other: {
+//     // ...frameMetadata,
+//   },
+// };
+
+
 
 
 
 export default function Page() {
+  const network = "optimism"
+  const actionId = 72
   return (
     <>
       <FrameMetadata
@@ -34,7 +38,7 @@ export default function Page() {
           ]
         }
         image={`${NEXT_PUBLIC_URL}/boost-pass-display.png`}
-        post_url={`${NEXT_PUBLIC_URL}/api/frame?actionId=1&network=optimism`}
+        post_url={`${NEXT_PUBLIC_URL}/llama/${network}/actions/${actionId}`}
       ></FrameMetadata>
       <h1>Boost Guild action network!</h1>
     </>
