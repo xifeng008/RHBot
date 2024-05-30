@@ -1,6 +1,5 @@
 import { FrameMetadata } from '@coinbase/onchainkit';
 import { NEXT_PUBLIC_URL } from '../../../../config';
-import { useParams } from 'next/navigation'
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -16,10 +15,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Page() {
-  const params = useParams()
-  const network = params?.network
-  const actionId = params?.actionId
+export default function Page({params}: {params: { network: string,  actionId: string }}) {
+  
   return (
     <>
       <FrameMetadata
@@ -36,17 +33,11 @@ export default function Page() {
           ]
         }
         image={`${NEXT_PUBLIC_URL}/boost-pass-display.png`}
-        post_url={`${NEXT_PUBLIC_URL}/api/frame?network=${network}&actionId=${actionId}`}
+        post_url={`${NEXT_PUBLIC_URL}/api/frame?network=${params.network}&actionId=${params.actionId}`}
       ></FrameMetadata>
       <h1>Boost Guild action network!</h1>
     </>
   );
 }
 
-// export async function getServerSideProps(context: any) {
-//     return {
-//         props: {
 
-//         }
-//     };
-// }

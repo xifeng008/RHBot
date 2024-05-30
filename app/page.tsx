@@ -1,4 +1,4 @@
-import { getFrameMetadata, FrameMetadata} from '@coinbase/onchainkit';
+import { getFrameMetadata, FrameMetadata } from '@coinbase/onchainkit';
 
 import type { Metadata } from 'next';
 import { NEXT_PUBLIC_URL } from './config';
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
-     <FrameMetadata
+      <FrameMetadata
         buttons={
           [
             {
@@ -53,3 +53,5 @@ export default function Page() {
     </>
   );
 }
+
+
