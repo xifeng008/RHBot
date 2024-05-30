@@ -9,9 +9,9 @@ export async function POST(req: NextRequest): Promise<Response> {
     const buttonId = data.untrustedData.buttonIndex
     let path: string;
     if(buttonId == 1) {
-        path = `${NEXT_PUBLIC_URL}/llama/${network}/actions/${actionId}/${req.url}/${req.nextUrl}`
+        path = `${NEXT_PUBLIC_URL}/llama/${network}/actions/${actionId}`
     } else if(buttonId == 2) {
-        path = `https://app.llama.xyz/orgs/boost/${network}/actions/${actionId}`
+        path = `https://app.llama.xyz/orgs/boost/${network}/actions/${actionId}/${req.url}/${req.nextUrl}`
     } else {
         path = ""
     }
