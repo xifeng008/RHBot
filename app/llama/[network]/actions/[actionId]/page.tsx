@@ -1,7 +1,6 @@
 import { FrameMetadata } from '@coinbase/onchainkit';
 import type { Metadata } from 'next';
 import { NEXT_PUBLIC_URL } from '../../../../config';
-import { usePathname } from 'next/navigation'
 
 export const metadata: Metadata = {
   title: 'Boot Guild!',
@@ -19,7 +18,6 @@ export const metadata: Metadata = {
 
 
 export default function Page() {
-  const params = usePathname()
   return (
     <>
       <FrameMetadata
@@ -36,7 +34,10 @@ export default function Page() {
           ]
         }
         image={`${NEXT_PUBLIC_URL}/boost-pass-display.png`}
-        post_url={`${params}/api/frame?actionId=1&network=optimism`}
+        post_url={`${NEXT_PUBLIC_URL}/api/frame?actionId=1&network=optimism`}
+        input={{
+          text: "Tell me a boat story"
+        }}
       ></FrameMetadata>
       <h1>Boost Guild action network!</h1>
     </>
