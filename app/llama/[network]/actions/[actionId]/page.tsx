@@ -2,6 +2,20 @@
 import { FrameMetadata } from '@coinbase/onchainkit';
 import { NEXT_PUBLIC_URL } from '../../../../config';
 import { useParams } from 'next/navigation'
+// import type { Metadata } from 'next';
+
+// export const metadata: Metadata = {
+//   title: 'Boot Guild!',
+//   description: 'LFG',
+//   openGraph: {
+//     title: 'RH',
+//     description: 'LFG',
+//     images: [`${NEXT_PUBLIC_URL}/park-1.png`],
+//   },
+//   other: {
+//     // ...frameMetadata,
+//   },
+// };
 
 export default function Page() {
     const params = useParams()
