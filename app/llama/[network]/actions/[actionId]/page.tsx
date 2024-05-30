@@ -37,7 +37,7 @@ export const metadata: Metadata = {
 
 export default function ActionPage() {
   const params = useParams()
-  const { actionId, network } = params
+  // const { actionId, network } = params
   return (
     <>
     <FrameMetadata 
@@ -54,7 +54,7 @@ export default function ActionPage() {
         ]
       }
       image={`${NEXT_PUBLIC_URL}/boost-pass-display.png`}
-      post_url={`${NEXT_PUBLIC_URL}/api/frame?actionId=${actionId}&network=${network}`}
+      post_url={`${NEXT_PUBLIC_URL}/api/frame?actionId=1&network=optimism`}
     ></FrameMetadata>
       <h1>Boost Guild action network!</h1>
     </>
