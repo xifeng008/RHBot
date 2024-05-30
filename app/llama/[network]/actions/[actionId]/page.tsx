@@ -1,7 +1,7 @@
 import { FrameMetadata } from '@coinbase/onchainkit';
 import type { Metadata } from 'next';
 import { NEXT_PUBLIC_URL } from '../../../../config';
-import { usePathname } from 'next/navigation'
+import { useRouter } from 'next/router'
 
 export const metadata: Metadata = {
   title: 'Boot Guild!',
@@ -19,12 +19,7 @@ export const metadata: Metadata = {
 
 
 export default function Page() {
-  const pathname = usePathname()
-  const pathArr = pathname.split('/llama/')
-  const params = pathArr ? pathArr[1].split("/actions/") : null
-  // const id = params.actionId
-  // const network = params.network
-  // const { actionId, network } = params
+  const router = useRouter()
   return (
     <>
       <FrameMetadata
