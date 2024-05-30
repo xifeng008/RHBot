@@ -2,11 +2,9 @@ import { NextRequest, NextResponse } from 'next/server'
 import { NEXT_PUBLIC_URL } from '../../config'
 
 export async function POST(req: NextRequest): Promise<Response> {
-    // const searchParams = req.nextUrl.searchParams
-    // const actionId = searchParams.get("actionId")
-    // const network = searchParams.get("network")
-    const actionId = 72
-    const network = 'optimism'
+    const searchParams = req.nextUrl.searchParams
+    const actionId = searchParams.get("actionId")
+    const network = searchParams.get("network")
     const data = await req.json()
     const buttonId = data.untrustedData.buttonIndex
     let path: string;
@@ -17,7 +15,6 @@ export async function POST(req: NextRequest): Promise<Response> {
     } else {
         path = ""
     }
-
     const headers = new Headers()
     headers.set('Loaction', NEXT_PUBLIC_URL)
     const response = NextResponse.redirect(`${path}`, {
