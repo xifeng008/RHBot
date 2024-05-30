@@ -9,7 +9,7 @@ export async function POST(req: NextRequest): Promise<Response> {
     // const { network, actionId } = params
     let path: string;
     if(buttonId == 1) {
-        path = ""
+        path = `${NEXT_PUBLIC_URL}/llama/optimism/actions/72`
     } else if(buttonId == 2) {
         path = `https://app.llama.xyz/orgs/boost/optimism/actions/72`
     } else {
@@ -17,7 +17,7 @@ export async function POST(req: NextRequest): Promise<Response> {
     }
 
     const headers = new Headers()
-    headers.set('Loaction', '')
+    headers.set('Loaction', NEXT_PUBLIC_URL)
     const response = NextResponse.redirect(`${path}`, {
         headers,
         status: 302
