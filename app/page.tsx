@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     images: [`${NEXT_PUBLIC_URL}/park-1.png`],
   },
   other: {
-    ...frameMetadata,
+    // ...frameMetadata,
   },
 };
 
