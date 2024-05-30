@@ -1,9 +1,10 @@
 import { FrameMetadata } from '@coinbase/onchainkit';
-import { NEXT_PUBLIC_URL } from '../../../../config';
+import { NEXT_PUBLIC_URL } from '../../../../app/config';
+import { useRouter } from 'next/router'
 
 export default function Page() {
-  const network = "optimism"
-  const actionId = 72
+    const router = useRouter()
+    const { network, actionId } = router.query
   return (
     <>
       <FrameMetadata
@@ -20,9 +21,17 @@ export default function Page() {
           ]
         }
         image={`${NEXT_PUBLIC_URL}/boost-pass-display.png`}
-        post_url={`${NEXT_PUBLIC_URL}/api/frame`}
+        post_url={`${NEXT_PUBLIC_URL}/api/frame?network=${network}&actionId=${actionId}`}
       ></FrameMetadata>
       <h1>Boost Guild action network!</h1>
     </>
   );
+}
+
+export async function getServerSideProps(context: any) {
+    return {
+        props: {
+
+        }
+    };
 }
