@@ -1,19 +1,17 @@
-import { FrameRequest, getFrameMessage, getFrameHtmlResponse } from '@coinbase/onchainkit';
-import { NextRequest, NextResponse } from 'next/server';
-import { NEXT_PUBLIC_URL } from '../../config';
-import { useParams } from 'next/navigation';
+import { NextRequest, NextResponse } from 'next/server'
+import { NEXT_PUBLIC_URL } from '../../config'
+import { useParams } from 'next/navigation'
 
-// import axios from 'axios';
-
-async function getResponse(req: NextRequest, llama: { network: string, actionId: string }): Promise<NextResponse> {
+export async function POST(req: NextRequest): Promise<Response> {
     const data = await req.json()
-    
     const buttonId = data.untrustedData.buttonIndex
+    // const params = useParams()
+    // const { network, actionId } = params
     let path: string;
     if(buttonId == 1) {
         path = ""
     } else if(buttonId == 2) {
-        path = `https://app.llama.xyz/orgs/boost/${llama.network}/actions/${llama.actionId}`
+        path = `https://app.llama.xyz/orgs/boost/optimism/actions/72`
     } else {
         path = ""
     }
@@ -27,11 +25,4 @@ async function getResponse(req: NextRequest, llama: { network: string, actionId:
     return response
 }
 
-export async function POST(req: NextRequest): Promise<Response> {
-    const params = useParams();
-    const { network, actionId } = params
-    const llama = { network, actionId } as { network: string, actionId: string }
-    return getResponse(req, llama);
-}
-
-export const dynamic = 'force-dynamic';
+export const dynamic = "force-dynamic"
