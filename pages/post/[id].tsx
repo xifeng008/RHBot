@@ -1,5 +1,5 @@
 import { FrameMetadata } from '@coinbase/onchainkit';
-import { NEXT_PUBLIC_URL } from '../../../app/config';
+import { NEXT_PUBLIC_URL } from '../../app/config';
 import { useRouter } from 'next/router'
 import type { Metadata } from 'next';
 
