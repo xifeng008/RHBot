@@ -1,10 +1,12 @@
+'use client'
 import { FrameMetadata } from '@coinbase/onchainkit';
-import { NEXT_PUBLIC_URL } from '../../../../app/config';
-import { useRouter } from 'next/router'
+import { NEXT_PUBLIC_URL } from '../../../../config';
+import { useParams } from 'next/navigation'
 
 export default function Page() {
-    const router = useRouter()
-    const { network, actionId } = router.query
+    const params = useParams()
+    const network = params?.network
+    const actionId = params?.actionId
   return (
     <>
       <FrameMetadata
@@ -28,10 +30,10 @@ export default function Page() {
   );
 }
 
-export async function getServerSideProps(context: any) {
-    return {
-        props: {
+// export async function getServerSideProps(context: any) {
+//     return {
+//         props: {
 
-        }
-    };
-}
+//         }
+//     };
+// }
