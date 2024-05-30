@@ -1,7 +1,7 @@
 import { FrameMetadata } from '@coinbase/onchainkit';
 import type { Metadata } from 'next';
 import { NEXT_PUBLIC_URL } from '../../../../config';
-import { useParams } from 'next/navigation'
+import { usePathname } from 'next/navigation'
 
 export const metadata: Metadata = {
   title: 'Boot Guild!',
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 
 
 export default function Page() {
-  const params = useParams()
+  const params = usePathname()
   return (
     <>
       <FrameMetadata
