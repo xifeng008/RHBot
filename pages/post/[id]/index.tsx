@@ -22,8 +22,8 @@ export default function Page() {
     // const actionId = 72
 
     const router = useRouter();
-    console.log(router.query)
-    const { id } = router.query
+    console.log(router.pathname)
+    const pathname = router.pathname
 
     return (
         <>
@@ -41,7 +41,7 @@ export default function Page() {
                     ]
                 }
                 image={`${NEXT_PUBLIC_URL}/boost-pass-display.png`}
-                post_url={`${NEXT_PUBLIC_URL}/api/frame?actionId=${id}`}
+                post_url={`${NEXT_PUBLIC_URL}/api/frame?actionId=${pathname}`}
             ></FrameMetadata>
             <h1>Boost Guild action network!</h1>
         </>
