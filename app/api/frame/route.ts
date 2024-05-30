@@ -5,8 +5,8 @@ import { useParams } from 'next/navigation'
 export async function POST(req: NextRequest): Promise<Response> {
     const data = await req.json()
     const buttonId = data.untrustedData.buttonIndex
-    // const params = useParams()
-    // const { network, actionId } = params
+    const params = useParams()
+    const { network, actionId } = params
     let path: string;
     if(buttonId == 1) {
         path = `${NEXT_PUBLIC_URL}/llama/optimism/actions/72`
