@@ -1,9 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { NEXT_PUBLIC_URL } from '../../config'
-import {usePathname } from 'next/navigation'
 
 export async function POST(req: NextRequest): Promise<Response> {
-    const pathname = usePathname()
     const searchParams = req.nextUrl.searchParams
     const actionId = searchParams.get("actionId")
     const network = searchParams.get("network")
@@ -11,7 +9,7 @@ export async function POST(req: NextRequest): Promise<Response> {
     const buttonId = data.untrustedData.buttonIndex
     let path: string;
     if(buttonId == 1) {
-        path = `${NEXT_PUBLIC_URL}/llama/${network}/actions/${actionId}/${pathname}`
+        path = `${NEXT_PUBLIC_URL}/llama/${network}/actions/${actionId}/${req.url}/${req.nextUrl}`
     } else if(buttonId == 2) {
         path = `https://app.llama.xyz/orgs/boost/${network}/actions/${actionId}`
     } else {
