@@ -1,6 +1,7 @@
 import {  getFrameMetadata ,FrameMetadata  } from '@coinbase/onchainkit';
 import type { Metadata } from 'next';
 import { NEXT_PUBLIC_URL } from '../../../../config';
+import { useParams } from 'next/navigation'
 
 const frameMetadata = getFrameMetadata({
   buttons: [
@@ -32,7 +33,8 @@ export const metadata: Metadata = {
 };
 
 export default function ActionPage() {
-  
+  const params = useParams()
+  console.log("params", params)
   return (
     <>
       <h1>Boost Guild action network!</h1>
