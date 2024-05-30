@@ -1,5 +1,5 @@
 import { FrameMetadata } from '@coinbase/onchainkit';
-import { NEXT_PUBLIC_URL } from '../../../../config';
+import { NEXT_PUBLIC_URL } from '../../../app/config';
 
 export default function Page() {
   const network = "optimism"
