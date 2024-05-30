@@ -6,6 +6,7 @@ const frameMetadata = getFrameMetadata({
   buttons: [
     {
       label: 'Read Summary',
+      action: 'post'
     },
     {
       label: 'Go To Approved',
@@ -13,8 +14,8 @@ const frameMetadata = getFrameMetadata({
     }
   ],
   image: `${NEXT_PUBLIC_URL}/boost-pass-display.png`,
-  post_url: `${NEXT_PUBLIC_URL}/llama/network/actions/acionId`,
-  // post_url: `${NEXT_PUBLIC_URL}/api/frame`,
+  // post_url: `${NEXT_PUBLIC_URL}/llama/network/actions/acionId`,
+  post_url: `${NEXT_PUBLIC_URL}/api/end`
 });
 
 export const metadata: Metadata = {

@@ -7,6 +7,7 @@ import { useParams } from 'next/navigation';
 
 async function getResponse(req: NextRequest, llama: { network: string, actionId: string }): Promise<NextResponse> {
     const data = await req.json()
+    
     const buttonId = data.untrustedData.buttonIndex
     let path: string;
     if(buttonId == 1) {
