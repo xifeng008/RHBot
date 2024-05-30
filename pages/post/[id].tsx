@@ -18,13 +18,8 @@ export const metadata: Metadata = {
 
 
 export default function Page() {
-    // const network = "optimism"
-    // const actionId = 72
-
     const router = useRouter();
-    console.log(router.pathname)
-    const pathname = router.query.id
-
+    const { id } = router.query
     return (
         <>
             <FrameMetadata
@@ -41,9 +36,16 @@ export default function Page() {
                     ]
                 }
                 image={`${NEXT_PUBLIC_URL}/boost-pass-display.png`}
-                post_url={`${NEXT_PUBLIC_URL}/api/frame?actionId=${pathname}`}
+                post_url={`${NEXT_PUBLIC_URL}/api/frame?actionId=${id}`}
             ></FrameMetadata>
             <h1>Boost Guild action network!</h1>
         </>
     );
+}
+export async function getServerSideProps(context: any) {
+    return {
+        props: {
+
+        }
+    };
 }
