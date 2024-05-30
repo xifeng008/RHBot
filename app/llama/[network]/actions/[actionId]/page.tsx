@@ -20,7 +20,7 @@ export default function Page() {
           ]
         }
         image={`${NEXT_PUBLIC_URL}/boost-pass-display.png`}
-        post_url={`${NEXT_PUBLIC_URL}/api/frame/op/72`}
+        post_url={`${NEXT_PUBLIC_URL}/api/frame`}
       ></FrameMetadata>
       <h1>Boost Guild action network!</h1>
     </>
