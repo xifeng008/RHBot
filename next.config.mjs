@@ -1,4 +1,5 @@
 const CROSS_DOMAIN_PROXY_IP = process.env.NEXT_PUBLIC_CROSS_DOMAIN_PROXY_IP
+console.log(CROSS_DOMAIN_PROXY_IP)
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
