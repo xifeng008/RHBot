@@ -7,7 +7,7 @@ const nextConfig = {
 		return [
 			{
 				source: '/api/:path*', // 匹配 /api/* 的请求
-				destination: "https://app.llama.xyz/api/:path" // 将请求代理到 https://app.llama.xyz
+				destination: CROSS_DOMAIN_PROXY_IP // 将请求代理到 https://app.llama.xyz
 			}
 		];
 	}
