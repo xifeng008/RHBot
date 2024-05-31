@@ -1,3 +1,20 @@
+import '@/styles/global.css'
+import type { Metadata } from 'next';
+import { NEXT_PUBLIC_URL } from '@/app/config';
+
+export const metadata: Metadata = {
+  title: 'Boot Guild!',
+  description: 'LFG',
+  openGraph: {
+    title: 'RH',
+    description: 'LFG',
+    images: [`${NEXT_PUBLIC_URL}/park-1.png`],
+  },
+  other: {
+    // ...frameMetadata,
+  },
+};
+
 export const viewport = {
   width: 'device-width',
   initialScale: 1.0,

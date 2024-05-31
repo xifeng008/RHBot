@@ -1,21 +1,19 @@
 import { FrameMetadata } from '@coinbase/onchainkit';
-import { NEXT_PUBLIC_URL } from '../../../../config';
-import type { Metadata } from 'next';
+import { NEXT_PUBLIC_URL } from '@/app/config';
 
-export const metadata: Metadata = {
-  title: 'Boot Guild!',
-  description: 'LFG',
-  openGraph: {
-    title: 'RH',
-    description: 'LFG',
-    images: [`${NEXT_PUBLIC_URL}/park-1.png`],
-  },
-  other: {
-    // ...frameMetadata,
-  },
-};
+import { NETWORK_TO_CHAIN_ID, NetworkName } from '@/lib/network';
+import { getActionInfo } from '@/service/getInfoAction';
+import BoostImage from '@/app/components/BoostImage/BoostImage';
 
-export default function Page({params}: {params: { network: string,  actionId: string }}) {
+
+
+export default async function Page({ params }: { params: { network: NetworkName, actionId: string } }) {
+  
+  // 根据network name 获取 chainId
+  const chainId = NETWORK_TO_CHAIN_ID[params.network]
+
+  // 请求action数据
+  const actionInfo = await getActionInfo(params.actionId, chainId)
   
   return (
     <>
@@ -35,7 +33,7 @@ export default function Page({params}: {params: { network: string,  actionId: st
         image={`${NEXT_PUBLIC_URL}/boost-pass-display.png`}
         post_url={`${NEXT_PUBLIC_URL}/api/frame?network=${params.network}&actionId=${params.actionId}`}
       ></FrameMetadata>
-      <h1>Boost Guild action network!</h1>
+      <BoostImage />
     </>
   );
 }
