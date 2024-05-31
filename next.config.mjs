@@ -1,5 +1,3 @@
-import { withContentlayer } from "next-contentlayer";
-
 const CROSS_DOMAIN_PROXY_IP = process.env.NEXT_PUBLIC_CROSS_DOMAIN_PROXY_IP
 
 /** @type {import('next').NextConfig} */
@@ -19,4 +17,4 @@ const nextConfig = {
 	}
 };
 
-export default withContentlayer(nextConfig);
+export default nextConfig
