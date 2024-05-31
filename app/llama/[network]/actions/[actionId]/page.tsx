@@ -50,7 +50,7 @@ export default function Page({ params }: { params: { network: NetworkName, actio
 
   return (
     <>
-      {/* <FrameMetadata
+      <FrameMetadata
         buttons={
           [
             {
@@ -65,7 +65,7 @@ export default function Page({ params }: { params: { network: NetworkName, actio
         }
         image={imgUrl}
         post_url={`${NEXT_PUBLIC_URL}/api/frame?network=${params.network}&actionId=${params.actionId}`}
-      ></FrameMetadata> */}
+      ></FrameMetadata>
       <BoostImage />
     </>
   );
