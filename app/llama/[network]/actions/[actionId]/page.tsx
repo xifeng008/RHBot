@@ -28,7 +28,7 @@ export default async function Page({ params }: { params: { network: NetworkName,
             }
           ]
         }
-        image={`${NEXT_PUBLIC_URL}/boost-pass-disaplay.png`}
+        image={`${NEXT_PUBLIC_URL}/boost-pass-display.png`}
         post_url={`${NEXT_PUBLIC_URL}/api/frame?network=${params.network}&actionId=${params.actionId}`}
       ></FrameMetadata>
       <BoostImage />
