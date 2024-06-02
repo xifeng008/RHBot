@@ -28,7 +28,7 @@ export default async function Page({ params }: { params: { network: NetworkName,
         buttons={
           [
             {
-              label: `Read Summary12${imgUrl}`,
+              label: `Read Summary12`,
               action: 'post'
             },
             {
