@@ -15,11 +15,11 @@ export default async function Page({ params }: { params: { network: NetworkName,
 
   const actionInfo = await getActionInfo(params.actionId, chainId)
 
-  // const imgUrl = `${NEXT_PUBLIC_URL}/boost-pass-display.png`
+  const imgUrl = `${NEXT_PUBLIC_URL}/boost-pass-display.png`
 
   const html = getBoostGuildHomeHtml(actionInfo.creatorAddress, actionInfo.title, actionInfo.state)
 
-  const imgUrl = "data:image/png;base64," + await htmlToBase64(html, 1200, 630)
+  // const imgUrl = "data:image/png;base64," + await htmlToBase64(html, 1200, 630)
 
   console.log(imgUrl)
   
