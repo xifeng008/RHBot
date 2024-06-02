@@ -15,7 +15,7 @@ export default async function Page({ params }: { params: { network: NetworkName,
   const actionInfo = await getActionInfo(params.actionId, chainId)
 
   const imgUrl1 = `${NEXT_PUBLIC_URL}/boost-pass-display.png`
-  const parser = new DOMParser();
+  // const parser = new DOMParser();
   return (
     <>
       <FrameMetadata
