@@ -6,10 +6,6 @@ import { getActionInfo } from '@/service/getInfoAction';
 import { getBoostGuildHomeHtml } from '@/lib/template';
 import htmlToBase64 from '@/lib/htmlToBase64';
 
-htmlToBase64
-
-
-
 
 export default async function Page({ params }: { params: { network: NetworkName, actionId: string } }) {
 
@@ -23,7 +19,9 @@ export default async function Page({ params }: { params: { network: NetworkName,
 
   const html = getBoostGuildHomeHtml(actionInfo.creatorAddress, actionInfo.title, actionInfo.state)
 
-  const imgUrl = await htmlToBase64(html, 1200, 630)
+  const imgUrl = "data:image/png;base64," + await htmlToBase64(html, 1200, 630)
+
+  console.log(imgUrl)
   
   return (
     <>
@@ -31,7 +29,7 @@ export default async function Page({ params }: { params: { network: NetworkName,
         buttons={
           [
             {
-              label: 'Read Summary12',
+              label: `Read Summary12${actionInfo.state}`,
               action: 'post'
             },
             {
