@@ -1,6 +1,7 @@
 import '@/styles/global.css'
 import type { Metadata } from 'next';
 import { NEXT_PUBLIC_URL } from '@/app/config';
+import { Provider } from "jotai";
 
 export const metadata: Metadata = {
   title: 'Boot Guild!',
@@ -23,7 +24,7 @@ export const viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body><Provider>{children}</Provider></body>
     </html>
   );
 }
