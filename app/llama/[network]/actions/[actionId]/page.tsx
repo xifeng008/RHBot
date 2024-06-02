@@ -13,22 +13,24 @@ export default async function Page({ params }: { params: { network: NetworkName,
 
   const actionInfo = await getActionInfo(params.actionId, chainId)
 
+  const imgUrl = `${NEXT_PUBLIC_URL}/boost-pass-display.png`
+
   return (
     <>
       <FrameMetadata
         buttons={
           [
             {
-              label: 'Read Summary',
+              label: 'Read Summary1',
               action: 'post'
             },
             {
-              label: 'Go To Approved',
+              label: 'Go To Approved2',
               action: 'post_redirect',
             }
           ]
         }
-        image={`${NEXT_PUBLIC_URL}/boost-pass-display.png`}
+        image={imgUrl}
         post_url={`${NEXT_PUBLIC_URL}/api/frame?network=${params.network}&actionId=${params.actionId}`}
       ></FrameMetadata>
       <BoostImage />
