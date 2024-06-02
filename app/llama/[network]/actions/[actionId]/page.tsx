@@ -18,6 +18,7 @@ export default async function Page({ params }: { params: { network: NetworkName,
   const html = getBoostGuildHomeHtml(actionInfo.creatorAddress, actionInfo.title, actionInfo.state)
 
   const imgUrl = "data:image/png;base64," + await htmlToBase64(html, 1200, 630)
+  const imgUrl1 = `${NEXT_PUBLIC_URL}/boost-pass-display.png`
 
   console.log(imgUrl)
   
@@ -36,10 +37,9 @@ export default async function Page({ params }: { params: { network: NetworkName,
             }
           ]
         }
-        image={imgUrl}
+        image={imgUrl1}
         post_url={`${NEXT_PUBLIC_URL}/api/frame?network=${params.network}&actionId=${params.actionId}`}
       ></FrameMetadata>
-      <img src={imgUrl} alt="" />
     </>
   );
 }
