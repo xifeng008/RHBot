@@ -3,7 +3,7 @@ import classNames from "classnames";
 import Image from 'next/image'
 import boostImage from '@/public/images/boostLog.png'
 import { useEffect } from 'react'
-import * as htmlToImage from 'html-to-image';
+// import * as htmlToImage from 'html-to-image';
 
 export default function BoostImage({
     creatorAddress,
@@ -16,12 +16,12 @@ export default function BoostImage({
 }) {
     
     useEffect(() => {
-        async function generateImagurl() {
-            const element = document.querySelector("#boost-image-html") as HTMLElement
-            const dataUrl = await htmlToImage.toPng(element, {width: 1200, height: 640})
-        }
+        // async function generateImagurl() {
+        //     const element = document.querySelector("#boost-image-html") as HTMLElement
+        //     const dataUrl = await htmlToImage.toPng(element, {width: 1200, height: 640})
+        // }
 
-        generateImagurl();
+        // generateImagurl();
     }, [])
 
     return (
