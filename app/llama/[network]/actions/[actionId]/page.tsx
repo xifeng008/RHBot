@@ -6,16 +6,17 @@ import { getActionInfo } from '@/service/getInfoAction';
 
 
 
-export default async function Page({ params }: { params: { network: NetworkName, actionId: string } }) {
+export default async function Page({ params}: { params: { network: NetworkName, actionId: string }}) {
   let imgUrl: string = ""
   try {
+
     // 根据network name 获取 chainId
     const chainId = NETWORK_TO_CHAIN_ID[params.network]
 
     // 将16进制数转换为10进制的数
     // const decimalChainId = parseInt(chainId + "", 16)
 
-    const result = await getActionInfo(params.actionId, chainId)
+    const result = await getActionInfo(params.actionId, chainId, 0)
 
     imgUrl = result.message
     // console.log(decimalChainId)
