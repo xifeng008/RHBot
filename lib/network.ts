@@ -26,12 +26,12 @@ export const NETWORK_TO_CHAIN_ID: Record<NetworkName, number> = {
     ethereum: 0x1,
     'eth-mainnet': 0x1,
     'eth-goerli': 0x5,
-    optimism: 0xa,
-    'opt-mainnet': 0xa,
-    'opt-goerli': 0x1a4,
-    arbitrum: 0xa4b1,
-    'arb-mainnet': 0xa4b1,
-    'arb-goerli': 0x66eed,
+    optimism: 10, // 0xa
+    'opt-mainnet': 10, // 0xa
+    'opt-goerli': 420, // 0x1a4
+    arbitrum: 42161, // 0xa4b1
+    'arb-mainnet': 42161,
+    'arb-goerli': 421613, // 0x66eed
     polygon: 0x89,
     'polygon-mainnet': 0x89,
     'polygon-mumbai': 0x13881,
