@@ -2,11 +2,11 @@ import axios from "axios"
 
 // 请求llama接口
 export async function getActionInfo(actionId: string | number, chainId: number) {
-    const url = `https://app.llama.xyz/api/external/v1/orgs/boost/actions/${actionId}?chainId=${chainId}`;
+    const url = `http://23.95.199.59:8888/boost/actionInfo/image?actionId=${actionId}&chainId=${chainId}`;
     try {
         const response = await axios.get(url)
-        if (response.data.status === 200) {
-            return response.data.data;
+        if (response.data.code === 200) {
+            return response.data;
         }
     } catch (error) {
         console.error(error);
