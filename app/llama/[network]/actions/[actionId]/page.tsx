@@ -13,15 +13,17 @@ export default async function Page({ params }: { params: { network: NetworkName,
     const chainId = NETWORK_TO_CHAIN_ID[params.network]
 
     // 将16进制数转换为10进制的数
-    const decimalChainId = parseInt(chainId + "", 16)
+    // const decimalChainId = parseInt(chainId + "", 16)
 
-    const result = await getActionInfo(params.actionId, decimalChainId)
+    const result = await getActionInfo(params.actionId, chainId)
 
     imgUrl = result.message
-    
+    // console.log(decimalChainId)
+
   } catch (error) {
     console.log(error)
   }
+
 
   return (
     <>
