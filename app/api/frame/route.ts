@@ -1,27 +1,26 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { NEXT_PUBLIC_URL } from '../../config'
 import { getFrameHtmlResponse } from '@coinbase/onchainkit';
+import { getActionInfo } from '@/service/getInfoAction';
+import { NETWORK_TO_CHAIN_ID, NetworkName } from '@/lib/network';
 
 export async function POST(req: NextRequest): Promise<Response> {
     const searchParams = req.nextUrl.searchParams
-    const actionId = searchParams.get("actionId")
+    const actionId = searchParams.get("actionId") as (string | number)
     const network = searchParams.get("network")
+    const chainId = NETWORK_TO_CHAIN_ID[network as NetworkName]
     const data = await req.json()
     const buttonId = data.untrustedData.buttonIndex
     let path: string;
     if(buttonId == 1) {
         // 获取图片URL
-        // path = `${NEXT_PUBLIC_URL}/llama/${network}/actions/${actionId}?type=1`
+        const result = await getActionInfo(actionId, chainId, 1)
+        const imgUrl = result.message
         return new NextResponse(
             getFrameHtmlResponse({
-                buttons: [
-                    { 
-                        label: 'Go To Approved',
-                        action: 'post_redirect',
-                    },
-                ],
-                image: `${NEXT_PUBLIC_URL}/park-2.png`,
-                post_url: `${NEXT_PUBLIC_URL}/api/frame?network=${network}&actionId=${actionId}`
+                // 在这里可以添加buttons按钮组件
+                image: `${imgUrl}`,
+                // 在这里可以添加post_url
             })
         )
     } else if(buttonId == 2) {
