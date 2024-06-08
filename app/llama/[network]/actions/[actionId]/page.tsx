@@ -14,7 +14,7 @@ export default async function Page({ params}: { params: { network: NetworkName, 
     // 根据network name 获取 chainId
     const chainId = NETWORK_TO_CHAIN_ID[params.network]
 
-    const result = await getActionInfo(params.actionId, chainId, 1)
+    const result = await getActionInfo(params.actionId, chainId, 0)
 
     imgUrl = result.message
     
