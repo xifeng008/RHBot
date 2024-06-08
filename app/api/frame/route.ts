@@ -21,7 +21,7 @@ export async function POST(req: NextRequest): Promise<Response> {
                 // 在这里可以添加buttons按钮组件
                 buttons: [
                     {
-                        label: 'return'
+                        label: 'Return'
                     }
                 ],
                 image: `${imgUrl}`,
