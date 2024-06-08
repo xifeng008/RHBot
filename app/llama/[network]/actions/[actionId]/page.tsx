@@ -3,6 +3,7 @@ import { NEXT_PUBLIC_URL } from '@/app/config';
 
 import { NETWORK_TO_CHAIN_ID, NetworkName } from '@/lib/network';
 import { getActionInfo } from '@/service/getInfoAction';
+import classNames from 'classnames';
 
 
 
@@ -13,14 +14,10 @@ export default async function Page({ params}: { params: { network: NetworkName, 
     // 根据network name 获取 chainId
     const chainId = NETWORK_TO_CHAIN_ID[params.network]
 
-    // 将16进制数转换为10进制的数
-    // const decimalChainId = parseInt(chainId + "", 16)
-
-    const result = await getActionInfo(params.actionId, chainId, 0)
+    const result = await getActionInfo(params.actionId, chainId, 1)
 
     imgUrl = result.message
-    // console.log(decimalChainId)
-
+    
   } catch (error) {
     console.log(error)
   }
@@ -44,6 +41,9 @@ export default async function Page({ params}: { params: { network: NetworkName, 
         image={imgUrl}
         post_url={`${NEXT_PUBLIC_URL}/api/frame?network=${params.network}&actionId=${params.actionId}`}
       ></FrameMetadata>
+      <div className='w-[100vw] h-[100vh] bg-[#000] flex'>
+        <img src={imgUrl} alt="" className='w-[1200px] h-[630px] m-auto' />
+      </div>
     </>
   );
 }
