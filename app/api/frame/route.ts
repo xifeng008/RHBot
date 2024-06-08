@@ -19,8 +19,14 @@ export async function POST(req: NextRequest): Promise<Response> {
         return new NextResponse(
             getFrameHtmlResponse({
                 // 在这里可以添加buttons按钮组件
+                buttons: [
+                    {
+                        label: 'return'
+                    }
+                ],
                 image: `${imgUrl}`,
                 // 在这里可以添加post_url
+                post_url: `${NEXT_PUBLIC_URL}/llama/${network}/actions/${actionId}`
             })
         )
     } else if(buttonId == 2) {
