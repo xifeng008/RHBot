@@ -1,0 +1,57 @@
+/* styles/Actions.module.css */
+
+.sectionTitle {
+    font-size: 28px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--primary-color);
+    color: var(--text-color);
+  }
+  
+  .card {
+    background-color: var(--card-background);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .actionList {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .actionItem {
+    border-bottom: 1px solid var(--border-color);
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  
+  .actionItem:last-child {
+    border-bottom: none;
+  }
+  
+  .actionContent {
+    flex-grow: 1;
+  }
+  
+  .actionContent h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: var(--text-color);
+  }
+  
+  .actionContent p {
+    margin-bottom: 10px;
+    color: var(--secondary-text-color);
+  }
+  
+  .actionStatus {
+    font-size: 14px;
+    color: var(--secondary-text-color);
+    background-color: #f0f0f0;
+    padding: 4px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+  }

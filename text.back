@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BoostGuild</title>
+    <style>
+        :root {
+            --primary-color: #00ff00;
+            --background-color: #f0f4f8;
+            --card-background: #ffffff;
+            --text-color: #333333;
+            --secondary-text-color: #666666;
+            --border-color: #e0e0e0;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 2px solid var(--primary-color);
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .assets {
+            font-weight: bold;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+        }
+        nav ul li a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .main-content {
+            margin-top: 40px;
+        }
+        .section-title {
+            font-size: 28px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-color);
+            color: var(--text-color);
+        }
+        .card {
+            background-color: var(--card-background);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        .member {
+            text-align: center;
+        }
+        .member img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        .action-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .action-item {
+            border-bottom: 1px solid var(--border-color);
+            padding: 15px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .action-item:last-child {
+            border-bottom: none;
+        }
+        .action-content {
+            flex-grow: 1;
+        }
+        .action-status {
+            font-size: 14px;
+            color: var(--secondary-text-color);
+            background-color: #f0f0f0;
+            padding: 4px 8px;
+            border-radius: 4px;
+            white-space: nowrap;
+        }
+        .button {
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+            margin-right: 10px;
+        }
+        .button:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <div class="logo">+ BoostGuild</div>
+                <div class="assets">1580 ETH</div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#actions">Actions</a></li>
+                    <li><a href="#marketing">Marketing</a></li>
+                    <li><a href="#grants">Grants</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="main-content">
+            <section id="about">
+                <h2 class="section-title">About BoostGuild</h2>
+                <div class="card">
+                    <p>BoostGuild is an organization dedicated to advancing blockchain technology development and innovation. We bring together top talent from the community to collectively drive the growth of the blockchain ecosystem.</p>
+                </div>
+                
+                <h3 class="section-title">Contributors</h3>
+                <div class="grid">
+                    <div class="member card">
+                        <img src="/api/placeholder/100/100" alt="John Doe">
+                        <h4>John Doe</h4>
+                        <a href="https://twitter.com/johndoe" target="_blank" class="button">Twitter</a>
+                    </div>
+                    <div class="member card">
+                        <img src="/api/placeholder/100/100" alt="Jane Smith">
+                        <h4>Jane Smith</h4>
+                        <a href="https://twitter.com/janesmith" target="_blank" class="button">Twitter</a>
+                    </div>
+                    <div class="member card">
+                        <img src="/api/placeholder/100/100" alt="Alice Johnson">
+                        <h4>Alice Johnson</h4>
+                        <a href="https://twitter.com/alicejohnson" target="_blank" class="button">Twitter</a>
+                    </div>
+                    <div class="member card">
+                        <img src="/api/placeholder/100/100" alt="Bob Williams">
+                        <h4>Bob Williams</h4>
+                        <a href="https://twitter.com/bobwilliams" target="_blank" class="button">Twitter</a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="actions">
+                <h2 class="section-title">BoostGuild Actions</h2>
+                <div class="card">
+                    <ul class="action-list">
+                        <li class="action-item">
+                            <div class="action-content">
+                                <h3>Blockchain Technology Summit</h3>
+                                <p>Date: August 15, 2024 | Location: Online</p>
+                                <p>An annual event bringing together blockchain experts and enthusiasts.</p>
+                            </div>
+                            <div class="action-status">Executed</div>
+                        </li>
+                        <li class="action-item">
+                            <div class="action-content">
+                                <h3>DeFi Innovation Workshop</h3>
+                                <p>Date: September 20, 2024 | Location: Shanghai</p>
+                                <p>A hands-on workshop exploring the latest trends in decentralized finance.</p>
+                            </div>
+                            <div class="action-status">Planned</div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="marketing">
+                <h2 class="section-title">Current Marketing Activities</h2>
+                <div class="card">
+                    <ul class="action-list">
+                        <li class="action-item">
+                            <div class="action-content">
+                                <h3>Social Media Campaign</h3>
+                                <p>Platform: Twitter, Discord | Duration: July 1 - August 31, 2024</p>
+                                <p>Objective: Increase community engagement and awareness of BoostGuild projects.</p>
+                                <a href="https://twitter.com/BoostGuild" target="_blank" class="button">Join on Twitter</a>
+                                <a href="https://discord.gg/boostguild" target="_blank" class="button">Join on Discord</a>
+                            </div>
+                            <div class="action-status">In Progress</div>
+                        </li>
+                        <li class="action-item">
+                            <div class="action-content">
+                                <h3>Daily Luckdrop</h3>
+                                <p>Today's Prize: 1000 BOOST tokens | Participants: 5000</p>
+                                <p>Winner announced daily at 18:00 UTC</p>
+                                <a href="https://boostguild.com/luckdrop" target="_blank" class="button">Participate Now</a>
+                            </div>
+                            <div class="action-status">Active</div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="grants">
+                <h2 class="section-title">Boost On-Chain Grants</h2>
+                <div class="grid">
+                    <div class="grant card">
+                        <h3>Project X</h3>
+                        <p>Grant Amount: 100,000 BOOST</p>
+                        <p>Status: Completed</p>
+                    </div>
+                    <div class="grant card">
+                        <h3>Project Y</h3>
+                        <p>Grant Amount: 50,000 BOOST</p>
+                        <p>Status: In Progress</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
